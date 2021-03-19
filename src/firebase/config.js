@@ -1,6 +1,8 @@
 // npm install firebase and import as firebase
 import firebase from 'firebase/app'
 import 'firebase/firestore'
+// firebase authentication
+import 'firebase/auth'
 
 const firebaseConfig = {
   apiKey: "AIzaSyB43QddYwpSSGc6ey0uYCea3rF4xJRSF7w",
@@ -18,5 +20,6 @@ firebase.initializeApp(firebaseConfig)
 const projectFirestore = firebase.firestore()
 // use the timestamp in firebase field
 const timestamp = firebase.firestore.FieldValue.serverTimestamp
+const projectAuth = firebase.auth()
 
-export { projectFirestore, timestamp }
+export { projectFirestore, timestamp, projectAuth }
