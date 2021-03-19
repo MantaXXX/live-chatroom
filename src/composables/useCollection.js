@@ -3,7 +3,7 @@ import { projectFirestore } from '../firebase/config'
 
 // pass (collection) as argument for whole collection of webpage to use
 const useCollection = (collection) => {
-  // many collection on website, put error in function to specific what kind of collection get error
+  // many collection on website, put error in function to specific which collection gets error
   const error = ref(null)
 
   const addDoc = async (doc) => {
@@ -11,7 +11,8 @@ const useCollection = (collection) => {
 
     try {
       await projectFirestore.collection(collection).add(doc)
-    } catch (err) {
+    }
+    catch (err) {
       console.log(err.message)
       error.value = "Could not send the message"
     }
